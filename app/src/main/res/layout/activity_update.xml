@@ -1,0 +1,267 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="#ffffff"
+            android:clickable="true"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="나의 빵집 후기"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/detail_submit"
+        android:layout_below="@+id/app_bar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/round_edge"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_up_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="빵집 이름"
+                        android:textSize="15sp"
+                        tools:layout_editor_absoluteX="27dp"
+                        tools:layout_editor_absoluteY="175dp" />
+
+                    <EditText
+                        android:id="@+id/et_up_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="빵집 이름 입력하세요."
+                        android:enabled="false"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+            름
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/round_edge"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_up_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="빵집 위치"
+                        android:textSize="15sp"
+                        tools:layout_editor_absoluteX="27dp"
+                        tools:layout_editor_absoluteY="175dp" />
+
+                    <EditText
+                        android:id="@+id/et_up_position"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="위치를 입력하세요. "
+                        android:enabled="false"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/round_edge"
+                android:padding="10dp"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="재방문 의사"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_up_tag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_up_yes"
+                        android:layout_width="106dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_up_no"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="No" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/up_contents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 의견 남기기"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="225dp" />
+
+            <EditText
+                android:id="@+id/et_up_contents"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/round_edge"
+                android:ems="15"
+                android:hint="나의 솔직한 후기를 작성해보세요."
+                android:inputType="textMultiLine"
+                android:padding="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/round_edge"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_up_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="사진"
+                        android:textSize="15sp"
+                        tools:layout_editor_absoluteX="27dp"
+                        tools:layout_editor_absoluteY="175dp" />
+
+                    <EditText
+                        android:id="@+id/et_up_pic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="빵 사진을 찍어보세요."
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:inputType="date"
+                        android:gravity="center"
+                        android:textSize="15sp"/>
+
+                    <Button
+                        android:id="@+id/btn_up_pic"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="CAMERA"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image_update"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                tools:srcCompat="@mipmap/ic_launcher" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/detail_up_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_up_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#17FFEB3B"
+            android:onClick="onClick"
+            android:text="edit"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_up_cancel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#17FFEB3B"
+            android:onClick="onClick"
+            android:text="cancel"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</RelativeLayout>

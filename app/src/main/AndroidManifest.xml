@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ddwu.mobile.finalproject.ma02_20170971">
+
+    <!-- 카메라 권한 -->
+    <uses-feature android:name="android.hardware.camera"  android:required="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/breadhome"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MA02_20170971">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="ddwu.mobile.finalproject.ma02_20170971.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_api_key" />
+
+        <service
+            android:name="ddwu.mobile.finalproject.ma02_20170971.GoogleMapAPI.FetchAddressIntentService"
+            android:exported="false"/>
+        <service
+            android:name="ddwu.mobile.finalproject.ma02_20170971.GoogleMapAPI.FetchLatLngIntentService"
+            android:exported="false"/>
+
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.BreadReview.AllActivity"/>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.BreadReview.AddActivity"/>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.BreadReview.UpdateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/kakao_scheme"
+                    android:host="@string/kakaolink_host" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.GoogleMapAPI.ViewMapActivity"/>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.GoogleMapAPI.DetailActivity"/>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.NaverBlogAPI.NaverBlogActivity"/>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170971.NaverLocalAPI.NaverLocalActivity"/>
+
+
+    </application>
+
+</manifest>
