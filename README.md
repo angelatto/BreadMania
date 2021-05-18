@@ -1,7 +1,7 @@
 # BreadMania (Android)
 
 Application For Bread Mania made with Java 
-Activity Duration - 2020.12
+( Activity Duration - 2020.12 )
 
 ### 1. 개요 
 -  빵 매니아들이 가게 별로 자신의 리뷰를 작성하기 위한 어플이다. 
