@@ -4,7 +4,7 @@
     <string name="title_map">지도</string>
     <string name="title_wishlist">나의 위시리스트</string>
 
-    <string name="google_api_key">AIzaSyDEKYdtKcp-yiW5XeeiV6eu5qQMt6FJbJw</string>
+    <string name="google_api_key"></string>
     <string name="hint_longitude">127.042650</string>
     <string name="hint_latitude">37.607398</string>
     <string name="hint_address">동덕여자대학교</string>
@@ -19,7 +19,7 @@
     <!--  Naver API Key -->
     <string name="api_url">https://openapi.naver.com/v1/search/blog.xml?display=20&amp;query=</string>
     <string name="api_url2">https://openapi.naver.com/v1/search/local.xml?display=20&amp;query=</string>
-    <string name="client_id">cUTF2sQo_CMUm5aWjZkB</string>
-    <string name="client_secret">9gf9xwWy_N</string>
+    <string name="client_id"></string>
+    <string name="client_secret"></string>
 
 </resources>
